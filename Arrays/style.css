@@ -20,10 +20,10 @@ body{
     border-radius: 10px;
     box-shadow: 5px 5px 5px;
     transition: all 0.5s ease;
-
+    background-color: antiquewhite;
 }
 textarea{
-    width: 200px;
+    width: 230px;
     height: 40px;
     max-width: 450px;
     max-height: 100px;
@@ -44,7 +44,7 @@ textarea:focus{
 button{
     padding: 5px 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.5s ease;
 }
@@ -63,25 +63,24 @@ button:hover{
 }
 table{
     display: none;
+    flex-direction: column;
     transition: all 0.5s ease;
-    padding: 15px;
     border: 1px solid red;
     border-collapse: collapse;
-    border-radius: 10px;
     text-align: center;
+}
+tr{
+    border-radius: 10px;
 }
 th{
     border: 1px solid red;
     padding: 5px;
+    border-radius: 10px;
 }
 td{
     border: 1px solid red;
     padding: 5px;
-
-}
-tr{
-    display: flex;
-    justify-content: space-between;
+    border-radius: 10px;
 }
 p{
     font-size: larger;
