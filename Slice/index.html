@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cont1">
+        <h1>Lista de tareas</h1>
+        <form onsubmit="event.preventDefault()">
+            <textarea id="tarea" placeholder="Ingresa la tarea"></textarea>
+            <div class="btns">
+                <button id="add">Agregar tarea</button>
+                <button id="random">Agregar tarea en una posición</button>
+                <button id="primero">Agregar tarea de primero</button>
+                <button id="borrar1">Eliminar primera tarea</button>
+                <button id="especifico">Eliminar tarea especifica</button>
+                <button id="delete">Eliminar ultima tarea</button>
+            </div>
+        </form>
+        <div class="tabla">
+            <table>
+                <thead>
+                    <tr id="th">
+                        <th>N°</th>
+                        <th>Tarea</th>
+                    </tr>
+                </thead>
+                <tbody id="body">
+                </tbody>
+            </table>
+        </div>
+        <p id="parrafo">Sin tareas por el momento</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
