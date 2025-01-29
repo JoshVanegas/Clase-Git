@@ -50,6 +50,7 @@ document.getElementById("primero").addEventListener("click", () => {
     acomodar()
     excede()
     con++
+    tarea.value = ""
 })
 document.getElementById("borrar1").addEventListener("click", () => {
 

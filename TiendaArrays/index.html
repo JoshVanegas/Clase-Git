@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Tiendita</h1>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Registrate</a></li>
+                <li><a href="#">Inicia sesion</a></li>
+                <li><button id="descuento">Obten descuento según tu edad</button></li>
+            </ul>
+        </nav>
+    </header>
+    <form id="form" onsubmit="event.preventDefault()">
+        <button class="X">X</button>
+        <label for="edad">Ingresa tu edad</label>
+        <input type="number"  id="edad" required min="0" step="1">
+        <button type="submit">Submit</button>
+    </form>
+    <form id="form2" onsubmit="event.preventDefault()">
+        <button class="X">X</button>
+        <label for="game">Agrega el juego</label>
+        <label for="nombre">Nombre del juego <input type="text"  id="nombre"></label>
+        <label for="imagen">URL de la imagen del juego <input type="text"  id="imagen"></label>
+        <label for="precio">Precio del juego <input type="number"  id="precio" min="0" step="0.5"></label>
+        <button type="submit">Submit</button>
+    <main>
+        <div id="juegos">
+            <article>
+                <h2>EA FC 25</h2>
+                <figure>
+                    <img src="https://th.bing.com/th/id/OIP.TiQyH9z0rBpjT8GG3yJ2CwHaHa?w=1080&h=1080&rs=1&pid=ImgDetMain" alt="">
+                    <figcaption></figcaption>
+                </figure>
+                <span >$200000</span>
+            </article>
+            <article>
+                <h2>GTA VI</h2>
+                <figure>
+                    <img src="https://th.bing.com/th/id/OIP.CzMibmTT8C1XveJ-BJTOAQHaEK?rs=1&pid=ImgDetMain" alt="">
+                    <figcaption></figcaption>
+                </figure>
+                <span >$300000</span>
+            </article>
+            <article>
+                <h2>BATTLEFIELD 4</h2>
+                <figure>
+                    <img src="https://th.bing.com/th/id/OIP.GhQo_1V52qLuwvG_9TYy0AHaHa?rs=1&pid=ImgDetMain" alt="">
+                    <figcaption></figcaption>
+                </figure>
+                <span >$100000</span>
+            </article>
+            <article>
+                <h2>FORZA HORIZON 5</h2>
+                <figure>
+                    <img src="https://th.bing.com/th/id/OIP.3lq1_tnvF2X6LEpO4KSlugHaId?rs=1&pid=ImgDetMain" alt="">
+                    <figcaption></figcaption>
+                </figure>
+                <span >$180000</span>
+            </article>
+            <article>
+                <h2>MK 11</h2>
+                <figure>
+                    <img src="https://th.bing.com/th/id/R.b8c86f4a8f4414a62c5fe37b8accce39?rik=xJqij74zDFdktw&pid=ImgRaw&r=0" alt="">
+                    <figcaption></figcaption>
+                </figure>
+                <span>$140000</span>
+            </article>
+        </div>
+        <div class="btns">
+            <button id="add">Agregar un juego a la tiendita</button>
+            <button id="delete">Eliminar el ultimo juego</button>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
