@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+header{
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+    text-align: center;
+    background-color: rgb(120, 42, 192);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+li{
+    button{
+        padding: 5px 3px;
+        border-radius: 5px;
+        border-style: none;
+        background-color: black;
+        color: violet;
+        border: 1px solid violet;
+    }
+    button:focus{
+        border: 2px solid white;
+    }
+}
+form{
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    background-color: rgb(120, 42, 192);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 5px;
+    transition: all 0.5s ease;
+    padding: 20px;
+    border-radius: 10px;
+    label{
+        font-size: larger;
+        text-align: center;
+    }
+    input{
+        padding: 4px 5px;
+        border-radius: 5px;
+        border-style: none;
+        margin: 4px;
+        background-color: rgb(71, 55, 102);
+    }
+}
+#form{
+    .XForm{
+        position: relative;
+        top: -5px;
+        left: 90px;
+        padding: 5px 8px;
+        background-color: rgb(143, 4, 4);
+        border-radius: 5px;
+        border-style: none;
+    }
+}
+#form2{
+    .XForm{
+        position: relative;
+        top: -5px;
+        left: 190px;
+        padding: 5px 8px;
+        background-color: rgb(143, 4, 4);
+        border-radius: 5px;
+        border-style: none;
+    }
+}
+button[type="submit"]{
+    padding: 5px 7px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    background-color: black;
+    transition: all 0.5s ease;
+}
+button[type="submit"]:hover{
+    transform: scale(1.1);
+}
+button[type="submit"]:focus{
+    transform: scale(0.9);
+}
+main{
+    background-color: black;
+    color: white;
+    width: 100%;
+    opacity: 1;
+}
+.juegos{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    margin: 50px;
+}
+button{
+    cursor: pointer;
+}
+article{
+    height: 380px;
+    width: 400px;
+    text-align: center;
+    button{
+        padding: 2px 7px;
+        border-radius: 5px;
+        position: relative;
+        top: 2px;
+        left: 179px;
+    }
+    border: 1px solid rgb(120, 42, 192);
+    padding: 10px;
+    border-radius: 10px;
+    .XArticle{
+        background-color: rgb(143, 4, 4);
+        border-radius: 5px;
+        border-style: none;
+        padding: 8px 12px;
+    }
+}
+img{
+    height: 280px;
+    width: 380px;
+    border-radius: 10px;
+}
+span{
+    font-size: larger;
+}

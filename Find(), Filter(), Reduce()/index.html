@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiMarket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MultiMarket</h1>
+    </header>
+    <main>
+        <form onsubmit="event.preventDefault()">
+            <label for="opcion">Escoja la sección a buscar</label>
+            <select id="opcion">
+                <option value="-">-</option>
+                <option value="tecnología">Tecnología</option>
+                <option value="calzado">Calzado</option>
+                <option value="deportes">Deportes</option>
+                <option value="moda">Moda</option>
+            </select>
+            <input type="text" id="nombre" placeholder="Nombre del producto">
+            <div>
+                <input type="number" id="precioMin"  placeholder="Precio mínimo" min="0" step="50"><input type="number" id="precioMax" placeholder="Precio máximo" min="0" step="50">
+            </div>
+            <button type="submit" id="Buscar">Buscar</button>
+        </form>
+        <section id="productos">
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <button id="carrito"></button>
+    <div id="factura">
+        <button id="equis">X</button>
+        <button type="button">Pagar</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

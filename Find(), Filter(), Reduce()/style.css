@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige
+}
+header{
+    background-color: rgb(6, 48, 34);
+    width: 100%;
+    text-align: center;
+    color: beige;
+}
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    align-items: self-start;
+    div{
+        display: flex;
+        gap: 10px;
+    }
+    button{
+        background-color: rgb(6, 48, 34);
+        color: beige;
+    }
+    padding: 20px;
+}
+select{
+    padding: 5px 7px ;
+    border-radius: 5px;
+    font-size: 14px;
+}
+#productos{
+    border: 1px solid;
+    transition: all 0.5s ease;
+    width: 90%;
+    height: 300px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+    div{
+        display: flex;
+        width: 100%;
+        gap: 25px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+    button{
+        background-color: rgb(6, 48, 34);
+        color: beige;
+    }
+    width: 200px;
+}
+input{
+    padding: 5px 7px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+button{
+    cursor: pointer;
+    padding: 6px 15px;
+    border-radius: 5px;
+    border-style: none;
+}
+#carrito{
+    background-image: url(shopping-cart-line-icon-vector.jpg);
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 88%;
+    left: 88%;
+    border-radius: 50%;
+    background-position: -1px 2px;
+    border: 1px solid;
+    transition: all 0.5s ease;
+}
+#carrito:focus{
+    transform: scale(0.9);
+}
+#factura{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(6, 48, 34);
+    padding: 40px;
+    border-radius: 10px;
+    button{
+        background-color: beige;
+        font-size: larger;
+        transition: all 0.5s ease;
+    }
+    button:focus{
+        transform: scale(0.9);
+    }
+    #equis{
+        position: relative;
+        top: -28px;
+        left: 48px;
+        padding: 1px 10px;
+        background-color: red;
+    }
+    color: beige;
+    transition: all 0.5s ease;
+}
