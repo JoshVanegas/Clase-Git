@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 50px;
+}
+section{
+    padding: 20px;
+    width: 600px;
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+    grid-template-areas: 
+    
+    "header header header header"
+    "main main img img"
+    "main main img img"
+    "pie pie pie pie"
+
+    ;
+}
+.art{
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.art2{
+    grid-area: header;
+}
+.art8{
+    grid-area: pie;
+}
+.art16{
+    grid-area: img;
+}
+body section article:nth-child(12){
+    grid-area: main;
+}

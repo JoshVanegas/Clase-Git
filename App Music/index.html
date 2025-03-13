@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="box center">
+        <div class="box-1 center">
+        <h4 id="name"></h4>
+        <div class="art">
+            <img class="center" id="artist" src="" alt="artist">
+        </div>
+        <div class="art-name">
+            <p class="title"></p>
+        </div>
+        <div class="prog">
+            <div class="time">
+                <div class="start">
+                    <p id="start">0:00</p>
+                </div>
+                <div class="end">
+                    <p id="end">0:00</p>
+                </div>
+            </div>
+            <div class="line">
+                <div class="lineChild"></div>
+            </div>
+        </div>
+        <div class="msc center">
+            <div class="ctrl center" onclick="backward()">
+                <i class="fa-solid fa-backward-step">
+                    <img src="./icons8-anterior-25.png" alt="backward">
+                </i>
+            </div>
+            <div class="ctrl center" id="playsong">
+                <i class="fa-solid fa-play"><img src="./icons8-play-24.png" alt="play"></i>
+                <i class="fa-solid fa-pause none">
+                    <img src="./icons8-pausa-30.png" alt="pause">
+                </i>
+            </div>
+            <div class="ctrl center" onclick="forward()">
+                <i class="fa-solid fa-foward-step">
+                    <img src="./icons8-fin-30.png" alt="Next">
+                </i>
+            </div>
+            <audio class="song" src=""></audio>
+        </div>
+        <div class="player-controls">
+            <div class="volume-control">
+                <button id="volume-btn" class="volume-btn" onclick="toggleVolume()">
+                    <img id="muted" class="no-sonido volume-icon" src="./icons8-cancelar-2-30.png" alt="Muted">
+                    <img id="vlm" src="./icons8-audio-30.png" alt="" class="volume-icon">
+                </button>
+                <input type="range" class="volume-slider" id="volume" min="0" max="1" step="0.01" value="1" oninput="setVolume()">
+            </div>
+        </div>
+    </section>
+</div> 
+</body>
+<script src="script.js"></script>
+</html>

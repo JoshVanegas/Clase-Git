@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <div>
+        <h1>Generador de tablas</h1>
+        <form id="form" onsubmit="event.preventDefault()">
+            <label for="numero">Ingrese el número: <input type="number" id="numero" min="0" step="1" required></label>
+            <label for="inicio">Desde que número? <input type="number" id="inicio" required min="1"></label>
+            <label for="limite">Hasta que número? <input type="number" id="limite" required min="1"></label>
+            <button type="submit">Generar</button>
+        </form>
+        <div id="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operacion</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="main.js" defer></script>
+</body>
+</html>
