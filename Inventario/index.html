@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="#">Inventario</a></h1>
+            <ul>
+                <li><a href="#">Conteo</a></li>
+                <li><a href="#">Seguimiento</a></li>
+                <li><a href="#">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form onsubmit="event.preventDefault()">
+            <h1>Ingreso de productos</h1>
+            <div>
+                <input type="text" id="nombre" placeholder="Nombre"><input type="number" id="precio" placeholder="Precio por unidad"><input type="number" placeholder="Stock" id="stock"><button type="submit">Agregar</button>
+            </div>
+        </form>
+        <div>
+            <h1>Inventario de productos</h1>
+            <input type="text" placeholder="Busqueda por nombre" id="buscar" oninput="busqueda(this.value.toLowerCase())"> 
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio x unidad</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <span>&copy; 2025 Josh Vanegas, Inc. All Rights Reserved.</span>
+    </footer>
+    <script src="main.js" defer></script>
+</body>
+</html>
