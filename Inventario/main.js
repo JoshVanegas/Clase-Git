@@ -5,33 +5,42 @@ const buscar  = document.getElementById("buscar")
 const tbody = document.getElementById("tbody")
 
 let inventario = []
+let contID =  0;
+document.querySelector("form").addEventListener("submit", () => {
+    let nombre = n.value.trim();
+    let precio = parseFloat(p.value);
+    let stock = parseInt(s.value);
 
-document.querySelector("form").addEventListener("submit", ()=>{
-    let nombre = n.value
-    let precio = p.value
-    let stock = s.value
+    if (!nombre || isNaN(precio) || isNaN(stock) || precio <= 0 || stock < 0) {
+        alert("Por favor, ingresa valores válidos para todos los campos.");
+        return;
+    }
+
     const producto = {
+        id: contID++,
         nombre: nombre,
         precio: precio,
-        stock : stock
-    }
-    inventario.push(producto)
-    actualizar()
-    n.value = ""
-    p.value = ""
-    s.value = ""
-})
-function actualizar(inventario){
+        stock: stock
+    };
+
+    inventario.push(producto);
+    actualizar(); 
+    n.value = "";
+    p.value = "";
+    s.value = "";
+});
+
+function actualizar(lista=inventario){
 
     tbody.innerHTML = ""
 
     setTimeout(() => {
 
-        inventario.forEach((registro, i) =>{
-            tbody.innerHTML +=`<tr id="f${i}">
-            <td>${i+1}</td>
+        lista.forEach((registro, i) =>{
+            tbody.innerHTML +=`<tr id="f${registro.id}">
+            <td>${registro.id}</td>
             <td contenteditable="true" onblur="editarProducto(${i}, 'nombre', this.textContent)">${registro.nombre}</td>
-            <td contenteditable="true" onblur="editarProducto(${i}, 'precio', this.textContent)">${registro.precio}</td>
+            <td contenteditable="true" onblur="editarProducto(${i}, 'precio', this.textContent)">${registro.precio.toFixed(2)}</td>
             <td contenteditable="true" onblur="editarProducto(${i}, 'stock', this.textContent)">${registro.stock}</td>
             <td><button class="delete" onclick="eliminar(${i})">Eliminar</button></td>
             </tr>`
@@ -44,37 +53,48 @@ function actualizar(inventario){
     }) */
 }
 function eliminar(i){
-
-    document.getElementById(`f${i}`).remove()
-    inventario.splice(i, 1)
+    inventario.splice(inventario[i], 1)
     actualizar()
 }
-function buscador(){
-   let busqueda = inventario
-
-   if(buscar.value !== ""){
-        busqueda = busqueda.filter(producto => producto.nombre.toLowerCase().includes(buscar.value.toLowerCase()))
-   }
-   inventario = busqueda
-   actualizar()
+function debounce(func, delay) {
+    let debounceTimer;
+    return function (...args) {
+        clearTimeout(debounceTimer); 
+        debounceTimer = setTimeout(() => func(...args), delay); 
+    };
 }
+
+const filtrarConDebounce = debounce(filtrador, 300);
+buscar.addEventListener("input", filtrarConDebounce);
+function filtrador() {
+    const textoBusqueda = buscar.value.toLowerCase().trim();
+    if (textoBusqueda === "") {
+        actualizar(); 
+        return;
+    }
+    const resultados = inventario.filter(producto =>
+        producto.nombre.toLowerCase().includes(textoBusqueda)
+    );
+    actualizar(resultados);
+}
+
 function editarProducto(i, campo, valor) {
     if (campo === "precio") {
         let nuevoPrecio = parseFloat(valor);
         if (isNaN(nuevoPrecio) || nuevoPrecio <= 0) {
             alert("Precio no válido");
-            actualizarListaProductos();
+            actualizar();
             return;
         }
-        productos[index].precio = nuevoPrecio;
-    } else if (campo === "cantidad") {
+        inventario[i].precio = nuevoPrecio;
+    } else if (campo === "stock") {
         let newStock = parseInt(valor);
-        if (isNaN(nuevaCantidad) || nuevaCantidad < 0) {
+        if (isNaN(newStock) || newStock < 0) {
             alert("Cantidad no válida");
-            actualizarListaProductos();
+            actualizar();
             return;
         }
-        inventario.stock = newStock;
+        inventario[i].stock = newStock;
     } else {
         inventario[i][campo] = valor.trim();
     }
