@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header><h1>Veterinaria Atanasio Girardot</h1></header>
+    <main>
+        <section>
+            <form onsubmit="event.preventDefault()" id="form">
+                <h3>Ingrese los datos de la mascota</h3>
+                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="number" id="edad" placeholder="Edad">
+                <select id="select">
+                    <option value="-">Escoja el tipo de animal</option>
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Hamster">Hamster</option>
+                    <option value="Loro">Loro</option>
+                </select>
+                <input type="text" id="duenio" placeholder="Dueño">
+                <button type="submit">Guardar</button>
+            </form>
+        </section>
+        <section id="container">
+            <div>
+                <select id="selectBuscar">
+                    <option value="-">Todos</option>
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Hamster">Hamster</option>
+                    <option value="Loro">Loro</option>
+                </select>
+                <input type="text" placeholder="Nombre de la mascota" id="nombreBuscar" oninput="buscador()">
+                <div id="btns">
+                    <button type="button" id="mostrar">Mostrar lista</button>
+                    <button type="button" id="borrarTodo" class="borrar">Borrar todo</button>
+                </div>
+            </div>
+            <div id="DivLista">
+                <ul id="lista">
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src = "../js/script.js" defer type="module"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agendamiento de turnos</h1>
+    </header>
+    <main>
+        <form onsubmit="event.preventDefault()">
+            <label for="nombre">Ingrese su nombre:</label>
+            <input type="text" id="nombre" required>
+            <button type="submit">Tomar turno</button>
+        </form>
+        <button id="atender">Atender cliente</button>
+        <h2>Usuarios en espera</h2>
+        <ul id="lista">
+            <li>
+                <p>nombre</p>
+                <p class="tiempo">timpo</p>
+            </li>
+        </ul>
+    </main>
+    <div id="modal" class="modal"></div>
+    <script src="main.js" defer></script>
+</body>
+</html>

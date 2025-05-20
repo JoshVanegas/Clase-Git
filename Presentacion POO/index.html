@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T. de presentacion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id="pnombre">Tu nombre</h1>
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" id="pfoto" alt="">
+        <p id="pdescripcion">Una breve descripcion de ti</p>
+        <button id="Actualizar">Actualizar perfil</button>
+    </div>
+    <form onsubmit="event.preventDefault()">
+        <h2>Ingrese sus datos personales</h2>
+        <input type="text" placeholder="Nombre" id="nombre" required>
+        <textarea  id="descripcion" placeholder="Breve descripcion"></textarea>
+        <select id="select">
+            <option value="1">Subir imagen desde el navegador</option>
+            <option value="2">Subir imagen desde un url</option>
+        </select>
+        <input type="file" id="imagenInp">
+        <div class="divPreview" id="divPreview">
+            <figure>
+                <img id="imgPreview" src="" alt=""> 
+
+                <button id="btnDelete" type="button">&cross;</button>
+            </figure>
+        </div>
+        <button type="submit">Cargar datos</button>
+    </form>
+    <script src="main.js" defer></script>
+</body>
+</html>

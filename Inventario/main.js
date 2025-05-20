@@ -5,7 +5,6 @@ const buscar  = document.getElementById("buscar")
 const tbody = document.getElementById("tbody")
 
 let inventario = []
-let contID =  0;
 document.querySelector("form").addEventListener("submit", () => {
     let nombre = n.value.trim();
     let precio = parseFloat(p.value);
@@ -17,7 +16,7 @@ document.querySelector("form").addEventListener("submit", () => {
     }
 
     const producto = {
-        id: contID++,
+        id: inventario.length,
         nombre: nombre,
         precio: precio,
         stock: stock
@@ -38,7 +37,7 @@ function actualizar(lista=inventario){
 
         lista.forEach((registro, i) =>{
             tbody.innerHTML +=`<tr id="f${registro.id}">
-            <td>${registro.id}</td>
+            <td>${i}</td>
             <td contenteditable="true" onblur="editarProducto(${i}, 'nombre', this.textContent)">${registro.nombre}</td>
             <td contenteditable="true" onblur="editarProducto(${i}, 'precio', this.textContent)">${registro.precio.toFixed(2)}</td>
             <td contenteditable="true" onblur="editarProducto(${i}, 'stock', this.textContent)">${registro.stock}</td>
@@ -53,7 +52,7 @@ function actualizar(lista=inventario){
     }) */
 }
 function eliminar(i){
-    inventario.splice(inventario[i], 1)
+    inventario.splice(i, 1)
     actualizar()
 }
 function debounce(func, delay) {
